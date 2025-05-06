@@ -10,20 +10,20 @@ import { motion } from "motion/react"
 
 const faqs = [
     {
-        question: "Do I get access to this landing page in the starter kit?",
-        answer: "Yes, this page isn't even a real landing page more so a template for you to build on."
+        question: "What is NovaFlow AI and how can it help my business?",
+        answer: "Yes. NovaFlow creates custom AI agents that automate repetitive tasks, analyze data, and optimize business processes. Our solutions significantly reduce operational costs while increasing efficiency across your organization."
     },
     {
-        question: "Is the starter kit regularly updated?",
-        answer: "Yes, we continuously update the starter kit with the latest features, security patches, and best practices to ensure you're always working with cutting-edge technology."
+        question: "What industries can benefit from NovaFlow's solutions?",
+        answer: "NovaFlow serves multiple sectors including financial services, healthcare, manufacturing, retail, and customer service. Any organization with repetitive processes or data analysis needs can benefit from our AI solutions."
     },
     {
-        question: "Can I use this for commercial projects?",
-        answer: "Absolutely! The starter kit comes with a commercial license, allowing you to use it in both personal and commercial projects without any restrictions."
+        question: "How long does implementation typically take?",
+        answer: "Implementation varies with solution complexity. Simple deployments complete within weeks, while comprehensive enterprise solutions may take a few months. We ensure minimal disruption throughout the process."
     },
     {
-        question: "What kind of support do you provide?",
-        answer: "We offer comprehensive support through our Discord community, where you can get help from both our team and other developers using the starter kit."
+        question: "Can NovaFlow integrate with our existing systems?",
+        answer: "Yes. Our solutions integrate with all major business software platforms and connect with custom or legacy systems. We ensure seamless operation within your existing technology ecosystem."
     }
 ]
 

@@ -3,72 +3,76 @@ import { IconProps } from "@radix-ui/react-icons/dist/types";
 import Image from "next/image";
 
 const Icons = {
-  typescript: (props: IconProps) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30px" height="30px" {...props}>
-      <rect width="36" height="36" x="6" y="6" fill="#1976d2"/>
-      <polygon fill="#fff" points="27.49,22 14.227,22 14.227,25.264 18.984,25.264 18.984,40 22.753,40 22.753,25.264 27.49,25.264"/>
-      <path fill="#fff" d="M39.194,26.084c0,0-1.787-1.192-3.807-1.192s-2.747,0.96-2.747,1.986 c0,2.648,7.381,2.383,7.381,7.712c0,8.209-11.254,4.568-11.254,4.568V35.22c0,0,2.152,1.622,4.733,1.622s2.483-1.688,2.483-1.92 c0-2.449-7.315-2.449-7.315-7.878c0-7.381,10.658-4.469,10.658-4.469L39.194,26.084z"/>
-    </svg>
+  OpenAI: (props: IconProps) => (
+    <svg xmlns="http://www.w3.org/2000/svg" shapeRendering="geometricPrecision" textRendering="geometricPrecision" imageRendering="optimizeQuality" fillRule="evenodd" clipRule="evenodd" viewBox="0 0 512 509.639"><path fill="#fff" d="M115.612 0h280.775C459.974 0 512 52.026 512 115.612v278.415c0 63.587-52.026 115.613-115.613 115.613H115.612C52.026 509.64 0 457.614 0 394.027V115.612C0 52.026 52.026 0 115.612 0z"/><path fillRule="nonzero" d="M412.037 221.764a90.834 90.834 0 004.648-28.67 90.79 90.79 0 00-12.443-45.87c-16.37-28.496-46.738-46.089-79.605-46.089-6.466 0-12.943.683-19.264 2.04a90.765 90.765 0 00-67.881-30.515h-.576c-.059.002-.149.002-.216.002-39.807 0-75.108 25.686-87.346 63.554-25.626 5.239-47.748 21.31-60.682 44.03a91.873 91.873 0 00-12.407 46.077 91.833 91.833 0 0023.694 61.553 90.802 90.802 0 00-4.649 28.67 90.804 90.804 0 0012.442 45.87c16.369 28.504 46.74 46.087 79.61 46.087a91.81 91.81 0 0019.253-2.04 90.783 90.783 0 0067.887 30.516h.576l.234-.001c39.829 0 75.119-25.686 87.357-63.588 25.626-5.242 47.748-21.312 60.682-44.033a91.718 91.718 0 0012.383-46.035 91.83 91.83 0 00-23.693-61.553l-.004-.005zM275.102 413.161h-.094a68.146 68.146 0 01-43.611-15.8 56.936 56.936 0 002.155-1.221l72.54-41.901a11.799 11.799 0 005.962-10.251V241.651l30.661 17.704c.326.163.55.479.596.84v84.693c-.042 37.653-30.554 68.198-68.21 68.273h.001zm-146.689-62.649a68.128 68.128 0 01-9.152-34.085c0-3.904.341-7.817 1.005-11.663.539.323 1.48.897 2.155 1.285l72.54 41.901a11.832 11.832 0 0011.918-.002l88.563-51.137v35.408a1.1 1.1 0 01-.438.94l-73.33 42.339a68.43 68.43 0 01-34.11 9.12 68.359 68.359 0 01-59.15-34.11l-.001.004zm-19.083-158.36a68.044 68.044 0 0135.538-29.934c0 .625-.036 1.731-.036 2.5v83.801l-.001.07a11.79 11.79 0 005.954 10.242l88.564 51.13-30.661 17.704a1.096 1.096 0 01-1.034.093l-73.337-42.375a68.36 68.36 0 01-34.095-59.143 68.412 68.412 0 019.112-34.085l-.004-.003zm251.907 58.621l-88.563-51.137 30.661-17.697a1.097 1.097 0 011.034-.094l73.337 42.339c21.109 12.195 34.132 34.746 34.132 59.132 0 28.604-17.849 54.199-44.686 64.078v-86.308c.004-.032.004-.065.004-.096 0-4.219-2.261-8.119-5.919-10.217zm30.518-45.93c-.539-.331-1.48-.898-2.155-1.286l-72.54-41.901a11.842 11.842 0 00-5.958-1.611c-2.092 0-4.15.558-5.957 1.611l-88.564 51.137v-35.408l-.001-.061a1.1 1.1 0 01.44-.88l73.33-42.303a68.301 68.301 0 0134.108-9.129c37.704 0 68.281 30.577 68.281 68.281a68.69 68.69 0 01-.984 11.545v.005zm-191.843 63.109l-30.668-17.704a1.09 1.09 0 01-.596-.84v-84.692c.016-37.685 30.593-68.236 68.281-68.236a68.332 68.332 0 0143.689 15.804 63.09 63.09 0 00-2.155 1.222l-72.54 41.9a11.794 11.794 0 00-5.961 10.248v.068l-.05 102.23zm16.655-35.91l39.445-22.782 39.444 22.767v45.55l-39.444 22.767-39.445-22.767v-45.535z"/></svg>
   ),
-  tailwind: (props: IconProps) => (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33" width="30px" height="30px" {...props}>
-      <g clipPath="url(#prefix__clip0)">
-        <path fill="#38bdf8" fillRule="evenodd" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z" clipRule="evenodd"/>
-      </g>
-      <defs>
-        <clipPath id="prefix__clip0">
-          <path fill="#fff" d="M0 0h54v32.4H0z"/>
-        </clipPath>
-      </defs>
-    </svg>
+  pytorch: (props: IconProps) => (
+    <svg xmlns="http://www.w3.org/2000/svg" shapeRendering="geometricPrecision" textRendering="geometricPrecision" imageRendering="optimizeQuality" fillRule="evenodd" clipRule="evenodd" viewBox="0 0 424 512.501"><g fill="#EE4C2C" fillRule="nonzero"><path d="M361.528 149.237l-38.178 38.179c62.472 62.472 62.472 163.12 0 224.435-62.472 62.472-163.12 62.472-224.435 0-62.472-62.472-62.472-163.122 0-224.435l98.914-98.915 13.882-13.882V0L62.472 149.237c-83.296 83.296-83.296 217.496 0 300.79 83.296 83.298 217.496 83.298 299.056 0 83.296-83.873 83.296-217.494 0-300.79z"/><path d="M314.675 112.218c0 15.334-12.431 27.765-27.766 27.765-15.336 0-27.767-12.431-27.767-27.765 0-15.335 12.431-27.766 27.767-27.766 15.335 0 27.766 12.431 27.766 27.766z"/></g></svg>
   ),
-  supabase: (props: IconProps) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 109 113" fill="none" {...props}>
-      <path d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z" fill="url(#paint0_linear)"/>
-      <path d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z" fill="url(#paint1_linear)" fillOpacity="0.2"/>
-      <path d="M45.317 2.07103C48.1765 -1.53037 53.9745 0.442937 54.0434 5.041L54.4849 72.2922H9.83113C1.64038 72.2922 -2.92775 62.8321 2.1655 56.4175L45.317 2.07103Z" fill="#3ECF8E"/>
-      <defs>
-        <linearGradient id="paint0_linear" x1="53.9738" y1="54.974" x2="94.1635" y2="71.8295" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#249361"/>
-          <stop offset="1" stopColor="#3ECF8E"/>
-        </linearGradient>
-        <linearGradient id="paint1_linear" x1="36.1558" y1="30.578" x2="54.4844" y2="65.0806" gradientUnits="userSpaceOnUse">
-          <stop/>
-          <stop offset="1" stopOpacity="0"/>
-        </linearGradient>
-      </defs>
-    </svg>
+  claude: (props: IconProps) => (
+    <svg xmlns="http://www.w3.org/2000/svg" shapeRendering="geometricPrecision" textRendering="geometricPrecision" imageRendering="optimizeQuality" fillRule="evenodd" clipRule="evenodd" viewBox="0 0 512 509.64"><path fill="#D77655" d="M115.612 0h280.775C459.974 0 512 52.026 512 115.612v278.415c0 63.587-52.026 115.612-115.613 115.612H115.612C52.026 509.639 0 457.614 0 394.027V115.612C0 52.026 52.026 0 115.612 0z"/><path fill="#FCF2EE" fillRule="nonzero" d="M142.27 316.619l73.655-41.326 1.238-3.589-1.238-1.996-3.589-.001-12.31-.759-42.084-1.138-36.498-1.516-35.361-1.896-8.897-1.895-8.34-10.995.859-5.484 7.482-5.03 10.717.935 23.683 1.617 35.537 2.452 25.782 1.517 38.193 3.968h6.064l.86-2.451-2.073-1.517-1.618-1.517-36.776-24.922-39.81-26.338-20.852-15.166-11.273-7.683-5.687-7.204-2.451-15.721 10.237-11.273 13.75.935 3.513.936 13.928 10.716 29.749 23.027 38.848 28.612 5.687 4.727 2.275-1.617.278-1.138-2.553-4.271-21.13-38.193-22.546-38.848-10.035-16.101-2.654-9.655c-.935-3.968-1.617-7.304-1.617-11.374l11.652-15.823 6.445-2.073 15.545 2.073 6.547 5.687 9.655 22.092 15.646 34.78 24.265 47.291 7.103 14.028 3.791 12.992 1.416 3.968 2.449-.001v-2.275l1.997-26.641 3.69-32.707 3.589-42.084 1.239-11.854 5.863-14.206 11.652-7.683 9.099 4.348 7.482 10.716-1.036 6.926-4.449 28.915-8.72 45.294-5.687 30.331h3.313l3.792-3.791 15.342-20.372 25.782-32.227 11.374-12.789 13.27-14.129 8.517-6.724 16.1-.001 11.854 17.617-5.307 18.199-16.581 21.029-13.75 17.819-19.716 26.54-12.309 21.231 1.138 1.694 2.932-.278 44.536-9.479 24.062-4.347 28.714-4.928 12.992 6.066 1.416 6.167-5.106 12.613-30.71 7.583-36.018 7.204-53.636 12.689-.657.48.758.935 24.164 2.275 10.337.556h25.301l47.114 3.514 12.309 8.139 7.381 9.959-1.238 7.583-18.957 9.655-25.579-6.066-59.702-14.205-20.474-5.106-2.83-.001v1.694l17.061 16.682 31.266 28.233 39.152 36.397 1.997 8.999-5.03 7.102-5.307-.758-34.401-25.883-13.27-11.651-30.053-25.302-1.996-.001v2.654l6.926 10.136 36.574 54.975 1.895 16.859-2.653 5.485-9.479 3.311-10.414-1.895-21.408-30.054-22.092-33.844-17.819-30.331-2.173 1.238-10.515 113.261-4.929 5.788-11.374 4.348-9.478-7.204-5.03-11.652 5.03-23.027 6.066-30.052 4.928-23.886 4.449-29.674 2.654-9.858-.177-.657-2.173.278-22.37 30.71-34.021 45.977-26.919 28.815-6.445 2.553-11.173-5.789 1.037-10.337 6.243-9.2 37.257-47.392 22.47-29.371 14.508-16.961-.101-2.451h-.859l-98.954 64.251-17.618 2.275-7.583-7.103.936-11.652 3.589-3.791 29.749-20.474-.101.102.024.101z"/></svg>
   ),
-  nextjs: (props: IconProps) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 256 256" {...props}>
-      <defs>
-        <linearGradient id="a" x1="55.633%" x2="83.228%" y1="56.385%" y2="96.08%">
-          <stop offset="0%" stopColor="#FFF"/>
-          <stop offset="100%" stopColor="#FFF" stopOpacity="0"/>
-        </linearGradient>
-        <linearGradient id="b" x1="50%" x2="49.953%" y1="0%" y2="73.438%">
-          <stop offset="0%" stopColor="#FFF"/>
-          <stop offset="100%" stopColor="#FFF" stopOpacity="0"/>
-        </linearGradient>
-        <circle id="c" cx="128" cy="128" r="128"/>
-      </defs>
-      <mask id="d" fill="#fff">
-        <use href="#c"/>
-      </mask>
-      <g mask="url(#d)">
-        <circle cx="128" cy="128" r="128"/>
-        <path fill="url(#a)" d="M212.634 224.028 98.335 76.8H76.8v102.357h17.228V98.68L199.11 234.446a128.433 128.433 0 0 0 13.524-10.418Z"/>
-        <path fill="url(#b)" d="M163.556 76.8h17.067v102.4h-17.067z"/>
-      </g>
-    </svg>
+  tensorflow: (props: IconProps) => (
+    <svg
+    id="Layer_1"
+    data-name="Layer 1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 534.01 508.99"
+    {...props}
+  >
+    <defs>
+      <clipPath id="clip-path">
+        <polygon
+          fill="none"
+          points="452.23 123.16 235.73 0 235.73 506.11 322.33 456.07 322.33 313.67 387.76 351.2 386.8 254.02 322.33 216.49 322.33 159.72 452.23 235.73 452.23 123.16"
+        />
+      </clipPath>
+      <linearGradient
+        id="linear-gradient"
+        x1="-20.21"
+        y1="-48.36"
+        x2="510.92"
+        y2="-48.36"
+        gradientTransform="matrix(1, 0, 0, -1, 0, 204.21)"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0" stopColor="#ff6f00" />
+        <stop offset="1" stopColor="#ffa800" />
+      </linearGradient>
+      <clipPath id="clip-path-2">
+        <polygon
+          fill="none"
+          points="0 123.16 216.49 0 216.49 506.11 129.89 456.07 129.89 159.72 0 235.73 0 123.16"
+        />
+      </clipPath>
+      <linearGradient
+        id="linear-gradient-2"
+        x1="-23.09"
+        y1="-48.36"
+        x2="508.03"
+        y2="-48.36"
+        xlinkHref="#linear-gradient"
+      />
+    </defs>
+    <title>Google TensorFlow</title>
+    <g clipPath="url(#clip-path)">
+      <path
+        fill="url(#linear-gradient)"
+        d="M-20.21-1.92H510.92v509H-20.21Z"
+      />
+    </g>
+    <g clipPath="url(#clip-path-2)">
+      <path fill="url(#linear-gradient-2)" d="M-23.09-1.92H508v509H-23.09Z" />
+    </g>
+  </svg>
   )
 };
 
 export function OrbitingCirclesComponent() {
   return (
     <div className="relative flex h-[500px] w-full max-w-[32rem] items-center justify-center overflow-hidden rounded-lg">
-      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-500/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-        Build Fast
+      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-500/80 bg-clip-text text-center text-4xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
+        NOVAFLOW
       </span>
 
       {/* Inner Circles */}
@@ -78,7 +82,7 @@ export function OrbitingCirclesComponent() {
         delay={20}
         radius={80}
       >
-        <Icons.typescript />
+        <Icons.OpenAI />
       </OrbitingCircles>
       <OrbitingCircles
         className="h-[30px] w-[30px] border-none bg-transparent"
@@ -86,7 +90,7 @@ export function OrbitingCirclesComponent() {
         delay={10}
         radius={80}
       >
-        <Icons.tailwind />
+        <Icons.claude />
       </OrbitingCircles>
 
       {/* Outer Circles (reverse) */}
@@ -96,7 +100,7 @@ export function OrbitingCirclesComponent() {
         radius={190}
         duration={20}
       >
-        <Icons.nextjs />
+        <Icons.pytorch />
       </OrbitingCircles>
       <OrbitingCircles
         className="h-[50px] w-[50px] border-none bg-transparent"
@@ -105,7 +109,7 @@ export function OrbitingCirclesComponent() {
         duration={20}
         delay={20}
       >
-        <Icons.supabase />
+        <Icons.tensorflow />
       </OrbitingCircles>
     </div>
   );

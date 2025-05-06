@@ -77,7 +77,7 @@ export default async function PricingPage() {
           </div>
 
           <div className="py-8">
-            <Pricing result={result as any} />
+            <Pricing  />
           </div>
         </section>
 

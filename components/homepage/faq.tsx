@@ -9,22 +9,21 @@ export function FAQ() {
     return (
         <Accordion type="single" collapsible className="w-full p-8">
             <AccordionItem value="item-1">
-                <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                <AccordionTrigger>What is NovaFlow AI and how can it help my business?</AccordionTrigger>
                 <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
+                    Yes. NovaFlow creates custom AI agents that automate repetitive tasks, analyze data, and optimize business processes. Our solutions significantly reduce operational costs while increasing efficiency across your organization.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-                <AccordionTrigger>Is it styled?</AccordionTrigger>
+                <AccordionTrigger>What industries can benefit from NovaFlow&apos;s solutions?</AccordionTrigger>
                 <AccordionContent>
-                    Yes. It comes with default styles that matches the other
-                    components&apos; aesthetic.
+                NovaFlow serves multiple sectors including financial services, healthcare, manufacturing, retail, and customer service. Any organization with repetitive processes or data analysis needs can benefit from our AI solutions.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-                <AccordionTrigger>Is it animated?</AccordionTrigger>
+                <AccordionTrigger>How long does implementation typically take?</AccordionTrigger>
                 <AccordionContent>
-                    Yes. It&apos;s animated by default, but you can disable it if you prefer.
+                Implementation varies with solution complexity. Simple deployments complete within weeks, while comprehensive enterprise solutions may take a few months. We ensure minimal disruption throughout the process.
                 </AccordionContent>
             </AccordionItem>
         </Accordion>

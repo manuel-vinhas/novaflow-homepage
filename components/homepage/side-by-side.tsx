@@ -1,89 +1,107 @@
 "use client"
-import { Computer, Network, Sparkles } from 'lucide-react'
-import { FaBusinessTime } from 'react-icons/fa'
+import { Sparkles } from 'lucide-react'
 import { OrbitingCirclesComponent } from './orbiting-circles'
 import { motion } from "motion/react"
 
-const features = [
+// Define the steps from the mockup
+const steps = [
   {
-    name: 'Build faster',
-    description:
-      'Get up and running in no time with pre-configured settings and best practices. Say goodbye to setup and focus on what truly matters - building your application.',
-    icon: Computer,
+    number: 1,
+    title: 'Consultation',
+    description: 'We analyze your specific business needs and processes'
   },
   {
-    name: 'Focus on business logic',
-    description: 'Concentrate on solving business problems instead of dealing with the repetitive setup.',
-    icon: FaBusinessTime,
+    number: 2,
+    title: 'Development',
+    description: 'Our team customizes AI agents for your specific use cases'
   },
   {
-    name: 'Ready for scale',
-    description: 'Prepare for growth from day one. With built-in optimizations and scalable architecture, your application will be ready to handle increased traffic and complexity.',
-    icon: Network,
+    number: 3,
+    title: 'Integration',
+    description: 'Simple implementation through our user-friendly platform'
   },
+  {
+    number: 4,
+    title: 'Training',
+    description: 'Your AI agents learn from your business data and knowledge base'
+  },
+  {
+    number: 5,
+    title: 'Deployment',
+    description: 'Seamless integration with your existing systems'
+  },
+  {
+    number: 6,
+    title: 'Improvement',
+    description: 'Ongoing optimization based on performance metrics'
+  }
 ]
 
 export default function SideBySide() {
   return (
-    <section className="py-24 overflow-hidden">
+    <section className="py-24 overflow-hidden bg-gray-50 dark:bg-gray-900/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-16 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 items-center">
+          {/* Left side content - OrbitingCircles on mobile & tablet, Steps on desktop */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="lg:pr-8 lg:pt-4"
+            className="relative order-2 lg:order-1"
+          >
+            <div className="relative rounded-xl overflow-hidden h-96 lg:h-full">
+              <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-background/5 to-background/0 z-10"></div>
+              <OrbitingCirclesComponent />
+            </div>
+          </motion.div>
+
+          {/* Right side content - Steps on mobile & tablet, OrbitingCircles on desktop */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="lg:pl-8 lg:pt-4 order-1 lg:order-2"
           >
             <div className="lg:max-w-lg">
               {/* Pill badge */}
               <div className="mb-6 w-fit rounded-full border border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-900/30 px-4 py-1">
                 <div className="flex items-center gap-2 text-sm font-medium text-blue-900 dark:text-blue-200">
                   <Sparkles className="h-4 w-4" />
-                  <span>Why Choose Next Starter</span>
+                  <span>Our Process</span>
                 </div>
               </div>
 
               <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 dark:from-white dark:via-blue-300 dark:to-white pb-2">
-                A Faster Path to Production
+                How It Works
               </h2>
               <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
-                Accelerate your development with our powerful Next.js starter kit. Focus on building features, not infrastructure.
+                Simple integration through our powerful AI platform
               </p>
-              <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
-                {features.map((feature, index) => (
+              
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {steps.map((step, index) => (
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    key={feature.name}
-                    className="relative pl-12 group hover:bg-gray-50 dark:hover:bg-gray-800/50 p-4 rounded-xl transition-colors"
+                    key={step.number}
+                    className="relative group hover:bg-white dark:hover:bg-gray-800/50 p-6 rounded-xl transition-colors shadow-sm hover:shadow-md"
                   >
-                    <dt className="inline font-semibold text-gray-900 dark:text-white">
-                      <feature.icon
-                        className="absolute left-3 top-5 h-6 w-6 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform"
-                        aria-hidden="true"
-                      />
-                      {feature.name}
-                    </dt>{' '}
-                    <dd className="inline text-gray-600 dark:text-gray-300">{feature.description}</dd>
+                    <div className="flex flex-col">
+                      <div className="flex items-center mb-3">
+                        <span className="flex items-center justify-center bg-blue-600 dark:bg-blue-500 text-white font-bold rounded-full h-8 w-8 text-sm">
+                          {step.number}
+                        </span>
+                        <h3 className="ml-3 text-lg font-semibold text-gray-900 dark:text-white">{step.title}</h3>
+                      </div>
+                      <p className="text-gray-600 dark:text-gray-300">{step.description}</p>
+                    </div>
                   </motion.div>
                 ))}
-              </dl>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="relative rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-background/5 to-background/0 z-10"></div>
-              <OrbitingCirclesComponent />
+              </div>
             </div>
           </motion.div>
         </div>

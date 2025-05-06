@@ -65,7 +65,7 @@ export default function NavBar() {
               <SheetHeader className="pb-6 border-b">
                 <SheetTitle className="flex items-center gap-2">
                   <Sparkles className="h-5 w-5 text-blue-600" />
-                  <span>Next Starter</span>
+                  <span>NOVAFLOW</span>
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-1 mt-6">
@@ -129,7 +129,7 @@ export default function NavBar() {
                   </Link>
                 </div>
 
-                {!userId && (
+                {/* {!userId && (
                   <div className="px-2 py-4 border-t mt-auto">
                     <Link href="/sign-in" prefetch={true}>
                       <Button className="w-full bg-blue-600 hover:bg-blue-500">
@@ -137,13 +137,13 @@ export default function NavBar() {
                       </Button>
                     </Link>
                   </div>
-                )}
+                )} */}
               </div>
             </SheetContent>
           </Dialog>
           <Link href="/" prefetch={true} className="flex items-center gap-2">
             <Sparkles className="h-5 w-5 text-blue-600" />
-            <span className="font-semibold">Next Starter</span>
+            <span className="font-semibold">NOVAFLOW</span>
           </Link>
         </div>
 
@@ -151,13 +151,13 @@ export default function NavBar() {
         <div className="hidden lg:flex items-center gap-2">
           <Link href="/" prefetch={true} className="flex items-center gap-2">
             <Sparkles className="h-5 w-5 text-blue-600" />
-            <span className="font-semibold">Next Starter</span>
+            <span className="font-semibold">NOVAFLOW</span>
           </Link>
         </div>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-6">
-          <NavigationMenu>
+          {/* <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
@@ -176,26 +176,26 @@ export default function NavBar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
             </NavigationMenuList>
-          </NavigationMenu>
+          </NavigationMenu> */}
 
-          <Link href="/dashboard" prefetch={true}>
+          {/* <Link href="/dashboard" prefetch={true}>
             <Button variant="ghost">Dashboard</Button>
-          </Link>
-          <Link href="/playground" prefetch={true}>
+          </Link> */}
+          {/* <Link href="/playground" prefetch={true}>
             <Button variant="ghost">AI Playground</Button>
           </Link>
           <Link
             href="https://github.com/michaelshimeles/nextjs14-starter-template"
             prefetch={true}
-          >
-            <Button variant="ghost" size="icon">
+          > */}
+            {/* <Button variant="ghost" size="icon">
               <Github className="h-5 w-5" />
-            </Button>
-          </Link>
+            </Button> */}
+          {/* </Link> */}
         </div>
 
         {/* Right Side */}
-        <div className="flex items-center gap-2">
+        {/* <div className="flex items-center gap-2">
           <ModeToggle />
           {!userId && (
             <Link href="/sign-in" prefetch={true}>
@@ -208,7 +208,7 @@ export default function NavBar() {
             </Link>
           )}
           {userId && <UserProfile />}
-        </div>
+        </div> */}
       </div>
     </motion.div>
   );

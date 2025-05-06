@@ -1,96 +1,113 @@
+// src/components/homepage/hero-section.tsx
 "use client";
-import { ArrowRight, Github, Sparkles } from "lucide-react";
+
+import { ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
-import { Button } from "../ui/button";
-import { motion } from "motion/react";
+import { Button } from "../ui/button"; // Assuming path is e.g., "@/components/ui/button"
+import { motion } from "framer-motion"; // Using framer-motion
+import heroAnimationScript from "./heroAnimationScript"; // Ensure this file exists and exports a function
+import React, { useEffect } from "react";
+// Corrected import path for the client-side useIntlayer hook
+import { useIntlayer } from "next-intlayer";
 
 export default function HeroSection() {
+  // Fetch translations using the unique key "hero-section".
+  // `intlayer` will look up this key in its registered content.
+  // The `content` object returned should directly contain the translated strings
+  // for the current active locale (e.g., content.badge, content.heading).
+  const content = useIntlayer("hero-section");
+
+  useEffect(() => {
+    // Ensure heroAnimationScript is a function before calling
+    if (typeof heroAnimationScript === 'function') {
+      heroAnimationScript();
+    }
+  }, []);
+
+  // Add a loading state or check if content is available.
+  // This is important because fetching content by key might be asynchronous
+  // or could fail if the key isn't found or content isn't loaded yet.
+  if (!content || Object.keys(content).length === 0) {
+    // You can return a more sophisticated loading skeleton here
+    return (
+      <section className="relative w-full flex items-center justify-center py-20 md:py-32">
+        <div>Loading Hero Section...</div>
+      </section>
+    );
+  }
+
   return (
-    <section
-      className="relative flex flex-col items-center justify-center py-20"
-      aria-label="Nextjs Starter Kit Hero"
-    >
-      {/* Background gradient */}
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
-        <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-blue-400 dark:bg-blue-500 opacity-20 blur-[100px]"></div>
+    <section className="relative w-full flex items-center justify-center py-20 md:py-32 overflow-hidden"> {/* Added overflow-hidden */}
+      {/* Background gradient element */}
+      <div className="gradient-bg absolute inset-0 z-0">
+        {/* Your SVG or CSS for gradients would go here. Example: */}
+        <svg width="100%" height="100%" style={{ position: 'absolute', top: 0, left: 0 }} aria-hidden="true">
+          <defs>
+            <radialGradient id="heroGradient" cx="50%" cy="50%" r="70%">
+              <stop offset="0%" stopColor="rgba(59, 130, 246, 0.2)" /> {/* blue-500 with opacity */}
+              <stop offset="100%" stopColor="rgba(17, 24, 39, 0)" /> {/* dark:bg-gray-900 (example) with opacity */}
+            </radialGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#heroGradient)" />
+        </svg>
       </div>
 
-      <div className="space-y-6 text-center max-w-4xl px-4">
-        {/* Pill badge */}
+      {/* Content container */}
+      <div className="relative z-10 space-y-6 sm:space-y-8 text-center px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mx-auto w-fit rounded-full border border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-900/30 px-4 py-1 mb-6"
+          className="mx-auto w-fit rounded-full border border-blue-300 dark:border-blue-700 bg-blue-100 dark:bg-blue-900/60 px-4 py-1.5 mb-6 shadow-sm"
         >
-          <div className="flex items-center gap-2 text-sm font-medium text-blue-900 dark:text-blue-200">
+          <div className="flex items-center gap-2 text-sm font-medium text-blue-700 dark:text-blue-300">
             <Sparkles className="h-4 w-4" />
-            <span>The Ultimate Next.js Starter Kit</span>
+            {/* Access translations directly from the content object */}
+            <span>{content.badge}</span>
           </div>
         </motion.div>
 
-        {/* Main heading */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 dark:from-white dark:via-blue-300 dark:to-white animate-gradient-x pb-2"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-600 to-gray-900 dark:from-white dark:via-blue-400 dark:to-white animate-gradient-x pb-2"
         >
-          Build Faster with <br className="hidden sm:block" />
-          Next Starter
+          {content.heading}
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+          className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-xl lg:max-w-2xl mx-auto"
         >
-          Launch your SaaS in minutes with our production-ready Next.js starter
-          kit. Everything you need, from auth to payments.
+          {content.subtitle1}
         </motion.p>
 
-        {/* CTA Buttons */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-xl lg:max-w-2xl mx-auto"
+        >
+          {content.subtitle2}
+        </motion.p>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-wrap justify-center items-center gap-4 pt-4"
+          className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-6 sm:pt-8"
         >
-          <Link href="/dashboard">
+          <Link href="/dashboard" passHref>
             <Button
               size="lg"
-              className="bg-blue-600 hover:bg-blue-500 text-white rounded-full px-8 h-12"
+              className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-full px-8 py-3 h-auto text-base font-semibold shadow-lg transform hover:scale-105 transition-transform duration-150 ease-in-out w-full sm:w-auto"
             >
-              Get Started
-              <ArrowRight className="ml-2 h-4 w-4" />
+              {content.cta}
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-          </Link>
-
-          <Link
-            href="https://discord.gg/HUcHdrrDgY"
-            target="_blank"
-            aria-label="Join Discord (opens in a new tab)"
-          >
-            <Button
-              variant="outline"
-              size="lg"
-              className="rounded-full px-8 h-12 border-2"
-            >
-              Join Discord
-              <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-            </Button>
-          </Link>
-
-          <Link
-            href="https://github.com/michaelshimeles/nextjs14-starter-template"
-            target="_blank"
-            className="flex items-center gap-2 rounded-full px-6 py-2 h-12 border-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            aria-label="View on GitHub"
-          >
-            <Github className="w-5 h-5" aria-hidden="true" />
-            <span>Star on GitHub</span>
           </Link>
         </motion.div>
       </div>

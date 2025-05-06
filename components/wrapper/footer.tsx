@@ -47,13 +47,12 @@ export default function Footer() {
                     <div className="space-y-8">
                         <Link href="/" className="flex items-center gap-2">
                             <Sparkles className="h-5 w-5 text-blue-600" />
-                            <span className="font-semibold">Next Starter</span>
+                            <span className="font-semibold">NOVAFLOW</span>
                         </Link>
                         <p className="text-sm text-gray-600 dark:text-gray-400 max-w-sm">
-                            Launch your SaaS in minutes with our production-ready Next.js starter kit.
-                            Everything you need, from auth to payments.
+                            Transform your business operations with NovaFlow&apos;s intelligent AI agents. Custom solutions for efficiency, automation, and growth.
                         </p>
-                        <div className="flex space-x-4">
+                        {/* <div className="flex space-x-4">
                             <Link href="https://github.com/michaelshimeles/nextjs14-starter-template" target="_blank">
                                 <Button variant="ghost" size="icon">
                                     <Github className="h-5 w-5" />
@@ -64,11 +63,11 @@ export default function Footer() {
                                     <Twitter className="h-5 w-5" />
                                 </Button>
                             </Link>
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* Links */}
-                    <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+                    {/* <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
                         <div className="md:grid md:grid-cols-2 md:gap-8">
                             <div>
                                 <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Product</h3>
@@ -129,11 +128,11 @@ export default function Footer() {
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div>*/}
                 </div>
                 <div className="mt-12 border-t border-gray-200 dark:border-gray-800 pt-8">
                     <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-                        &copy; {new Date().getFullYear()} Next Starter. All rights reserved.
+                        &copy; {new Date().getFullYear()} NovaFlow. All rights reserved.
                     </p>
                 </div>
             </div>
