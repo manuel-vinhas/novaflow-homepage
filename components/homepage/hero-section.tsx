@@ -3,32 +3,25 @@
 
 import { ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
-import { Button } from "../ui/button"; // Assuming path is e.g., "@/components/ui/button"
-import { motion } from "framer-motion"; // Using framer-motion
-import heroAnimationScript from "./heroAnimationScript"; // Ensure this file exists and exports a function
+import { Button } from "../ui/button";
+import { motion } from "framer-motion";
 import React, { useEffect } from "react";
-// Corrected import path for the client-side useIntlayer hook
 import { useIntlayer } from "next-intlayer";
 
 export default function HeroSection() {
-  // Fetch translations using the unique key "hero-section".
-  // `intlayer` will look up this key in its registered content.
-  // The `content` object returned should directly contain the translated strings
-  // for the current active locale (e.g., content.badge, content.heading).
+  // Fetch translations using the unique key "hero-section"
   const content = useIntlayer("hero-section");
 
+  // Handle hero animation (if you have the script)
   useEffect(() => {
-    // Ensure heroAnimationScript is a function before calling
-    if (typeof heroAnimationScript === 'function') {
-      heroAnimationScript();
-    }
+    // If you have a heroAnimationScript, uncomment this
+    // if (typeof heroAnimationScript === 'function') {
+    //   heroAnimationScript();
+    // }
   }, []);
 
-  // Add a loading state or check if content is available.
-  // This is important because fetching content by key might be asynchronous
-  // or could fail if the key isn't found or content isn't loaded yet.
+  // Loading state
   if (!content || Object.keys(content).length === 0) {
-    // You can return a more sophisticated loading skeleton here
     return (
       <section className="relative w-full flex items-center justify-center py-20 md:py-32">
         <div>Loading Hero Section...</div>
@@ -37,15 +30,14 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative w-full flex items-center justify-center py-20 md:py-32 overflow-hidden"> {/* Added overflow-hidden */}
+    <section className="relative w-full flex items-center justify-center py-20 md:py-32 overflow-hidden">
       {/* Background gradient element */}
       <div className="gradient-bg absolute inset-0 z-0">
-        {/* Your SVG or CSS for gradients would go here. Example: */}
         <svg width="100%" height="100%" style={{ position: 'absolute', top: 0, left: 0 }} aria-hidden="true">
           <defs>
             <radialGradient id="heroGradient" cx="50%" cy="50%" r="70%">
-              <stop offset="0%" stopColor="rgba(59, 130, 246, 0.2)" /> {/* blue-500 with opacity */}
-              <stop offset="100%" stopColor="rgba(17, 24, 39, 0)" /> {/* dark:bg-gray-900 (example) with opacity */}
+              <stop offset="0%" stopColor="rgba(59, 130, 246, 0.2)" />
+              <stop offset="100%" stopColor="rgba(17, 24, 39, 0)" />
             </radialGradient>
           </defs>
           <rect width="100%" height="100%" fill="url(#heroGradient)" />
@@ -62,7 +54,6 @@ export default function HeroSection() {
         >
           <div className="flex items-center gap-2 text-sm font-medium text-blue-700 dark:text-blue-300">
             <Sparkles className="h-4 w-4" />
-            {/* Access translations directly from the content object */}
             <span>{content.badge}</span>
           </div>
         </motion.div>

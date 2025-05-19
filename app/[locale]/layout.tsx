@@ -1,6 +1,5 @@
 // src/app/[locale]/layout.tsx
 
-// ... other imports ...
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import Provider from "@/app/provider";
@@ -9,11 +8,9 @@ import { Analytics } from "@vercel/analytics/react";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 
-import type { NextLayoutIntlayer } from 'next-intlayer';
-import { getHTMLTextDir } from 'intlayer';
+import { NextLayoutIntlayer, getLocaleDirection } from 'next-intlayer';
 export { generateStaticParams } from 'next-intlayer';
 
-// ... your metadata ...
 export const metadata: Metadata = {
   metadataBase: new URL("https://agencynovaflow.com/"),
   title: {
@@ -21,20 +18,16 @@ export const metadata: Metadata = {
     template: '%s | Novaflow'
   },
   description:
-    "The AI Agency that will make you perform insanelly great! ",
+    "The AI Agency that will make you perform insanely great!",
 };
 
-
-const LocaleLayout: NextLayoutIntlayer = async ({
-  children,
-  params, // params is of type Promise<{ locale: Locales; }>
-}) => {
+const LocaleLayout: NextLayoutIntlayer = async ({ children, params }) => {
   // Correctly await the params promise before destructuring
-  const { locale } = await params; // <--- THE FIX IS HERE
+  const { locale } = await params;
 
   return (
     <ClerkProvider>
-      <html lang={locale} dir={getHTMLTextDir(locale)} suppressHydrationWarning>
+      <html lang={locale} dir={getLocaleDirection(locale)} suppressHydrationWarning>
         <body className={GeistSans.className}>
           <Provider>
             <ThemeProvider
@@ -52,6 +45,6 @@ const LocaleLayout: NextLayoutIntlayer = async ({
       </html>
     </ClerkProvider>
   );
-}
+};
 
 export default LocaleLayout;

@@ -1,12 +1,13 @@
 // src/app/[locale]/page.tsx
 
-"use client"; // Add this if your Home component directly uses useEffect or other client hooks
+"use client";
 
 import { useEffect } from 'react';
-import type { NextPageIntlayer } from "next-intlayer"; // Keep NextPageIntlayer as a type import
-import { IntlayerClientProvider } from "next-intlayer"; // Import IntlayerClientProvider as a value
+import { IntlayerClientProvider } from "next-intlayer";
+import { NextPageIntlayer } from "next-intlayer";
 import { IntlayerServerProvider } from "next-intlayer/server";
-// ... other imports
+
+// Component imports
 import { AccordionComponent } from "@/components/homepage/accordion-component";
 import HeroSection from "@/components/homepage/hero-section";
 import ValueProposition from "@/components/homepage/value-proposition";
@@ -21,22 +22,22 @@ import Features from "@/components/homepage/features";
 import Testimonials from "@/components/homepage/testimonials";
 import AboutUs from "@/components/homepage/about-us";
 
-// Define the Home component's content.
-// If Home uses client hooks like useEffect, it should be a Client Component.
-// You can keep it as part of this file or move it to a separate client component file.
+// HomePageContent component with client-side functionality
 const HomePageContent = () => {
     useEffect(() => {
+        // Add BotPress chat script
         const link = document.createElement("link");
         link.rel = "stylesheet";
-        link.href = 'https://agencyanovaflow.com/chat-assets/my-chat-frontend.css';
+        link.href = 'https://agencynovaflow.com/chat-assets/my-chat-frontend.css';
         document.head.appendChild(link);
 
         const script = document.createElement("script");
-        script.src = 'https://agencyanovaflow.com/chat-assets/'; // Original src was 'https://agencyanovaflow.com/chat-assets/' check if this is correct for the script itself
+        script.src = 'https://agencynovaflow.com/chat-assets/';
         script.dataset.clientName = "Novaflow";
         script.async = true;
         document.body.appendChild(script);
 
+        // Cleanup function
         return () => {
             if (document.head.contains(link)) {
                 document.head.removeChild(link);
@@ -48,39 +49,33 @@ const HomePageContent = () => {
     }, []);
 
     return (
-        // <PageWrapper> // You can use your PageWrapper here if it's still relevant
-        <>
-            {/* <BotPressChat /> */}
+        <PageWrapper>
+            <BotPressChat />
             {/* <NoiseOverlay /> */}
             <div className="flex flex-col justify-center items-center w-full">
                 <HeroSection />
             </div>
-            {/* Replace with your actual components */}
-            <h2>Welcome to the Homepage!</h2>
-            <p>This is where your components like ValueProposition, SideBySide, Usecases, etc., will go.</p>
-            {/* <ValueProposition /> */}
-            {/* <SideBySide /> */}
-            {/* <Usecases /> */}
+            <ValueProposition />
+            <SideBySide />
+            <UseCases />
+            <Features />
             {/* <Testimonials /> */}
             {/* <AboutUs /> */}
             {/* <MarketingCards /> */}
             {/* <Pricing /> */}
-            {/* <AccordionComponent /> */}
-
-        </>
-        // </PageWrapper>
+            <AccordionComponent />
+        </PageWrapper>
     );
 };
 
-
-// This is the main Page component for the route
+// Main Page component with intlayer integration
 const Page: NextPageIntlayer = async ({ params }) => {
     const { locale } = await params;
 
     return (
         <IntlayerServerProvider locale={locale}>
             <IntlayerClientProvider locale={locale}>
-                <HomePageContent /> {/* Your actual page content component */}
+                <HomePageContent />
             </IntlayerClientProvider>
         </IntlayerServerProvider>
     );
